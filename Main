@@ -79,7 +79,7 @@ void main (void){
         int digit3 = voltage % 10;
         int val;
         
-         //Tabla Primer display
+         //Tabla display 1
         switch (digit1) {
             case 0:
                 val = 0b00111111;
@@ -115,13 +115,13 @@ void main (void){
                 break;
         }
         
-        //Mostrar valor en display
-        PORTEbits.RE0 = 1; // Encender primer ánodo común
+        //Mostrar valor en display 1
+        PORTEbits.RE0 = 1; // Encender el pin 0 del puerto E
         PORTD=val;
-        __delay_ms(5); // Esperar un tiempo suficiente para que el segmento se encienda
-        PORTEbits.RE0 = 0; // Apagar primer ánodo común
+        __delay_ms(5); 
+        PORTEbits.RE0 = 0; // Apagar el pin 0 del Puerto E
         
-        //Tabla Segundo display
+        //Tabla display 2
         switch (digit2) {
             case 0:
                 val = 0b00111111;
@@ -156,13 +156,13 @@ void main (void){
             default:
                 break;
         }
-        //Mostrar valor en display
-        PORTEbits.RE1 = 1; // Encender primer ánodo común
+        //Mostrar valor en display 2
+        PORTEbits.RE1 = 1; // Encender el pin 1 del puerto E
         PORTD=val;
-        __delay_ms(5); // Esperar un tiempo suficiente para que el segmento se encienda
-        PORTEbits.RE1 = 0; // Apagar primer ánodo común
+        __delay_ms(5); 
+        PORTEbits.RE1 = 0; 
         
-        //tabla tercer display
+        //tabla display 3
         switch (digit3) {
             case 0:
                 val = 0b00111111;
@@ -197,11 +197,11 @@ void main (void){
             default:
                 break;
         }
-        //Mostrar valor en display
-        PORTEbits.RE2 = 1; // Encender primer ánodo común
+        //Mostrar valor en display 3
+        PORTEbits.RE2 = 1; // Encender el pin 0 del puerto E
         PORTD=val;
-        __delay_ms(5); // Esperar un tiempo suficiente para que el segmento se encienda
-        PORTEbits.RE2 = 0; // Apagar primer ánodo común
+        __delay_ms(5); 
+        PORTEbits.RE2 = 0; 
     }
     return;
 
